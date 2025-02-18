@@ -30,9 +30,6 @@ public class ArrayQueue {
         if (r == queue.length) {
             r = 0;
         }
-        /*if (counter == queue.length/4) {
-            decrease();
-        }*/
 
         if (removed == null) {
             return null;
@@ -40,6 +37,7 @@ public class ArrayQueue {
             return removed;
         }
     }
+    
     private void increase() {
         Integer[] newArr = new Integer[queue.length*2];
 
@@ -52,21 +50,6 @@ public class ArrayQueue {
         r = 0;
         a = i;
 
-        /*for (int i = 0; i < queue.length; i++) {
-            if (queue[r] != null) {
-                newArr[i] = queue[r];
-                r++;
-            } else if (queue[r] == null && r > a){
-                r = 0;
-                newArr[i] = queue[r];
-                r++;
-            } else if (queue[r] == null && r<=a) {
-                r = 0;
-                a = i;
-                System.out.println(i);
-                break;
-            }
-        }*/
         this.queue = newArr;
     }
 
@@ -79,23 +62,9 @@ public class ArrayQueue {
             i++;
             counter++;
         }
+        
         r = 0;
         a = i;
-
-        /*for (int i = 0; i < newArr.length; i++) {
-            if (r < queue.length) {
-                newArr[i] = queue[r];
-                r++;
-            } else if (r == queue.length && r > a) {
-                r = 0;
-                newArr[i] = queue[r];
-                r++;
-            } else if (r == queue.length && r <= a) {
-                r = 0;
-                a = i;
-                break;
-            }
-        }*/
         queue = newArr;
     }
 }
